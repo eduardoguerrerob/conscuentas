@@ -1,0 +1,50 @@
+<mvc:View controllerName="egb.cuentasui5.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page"
+                    title="{i18n>title}">
+                    <content>
+                        <Wizard id="CreateProductWizard"
+                            class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                            complete="wizardCompletedHandler">
+                            <WizardStep id="step1"
+                                title="Descripción de la consulta"
+                                validated="true">
+                                <MessageStrip id="mstrip1"
+                                    class="sapUiSmallMarginBottom"
+                                    text="Digite los datos básicos de la consulta"
+                                    showIcon="true"/>
+                                <Text class="sapUiSmallMarginBottom"
+                                    text="aaa"/>
+                            </WizardStep>
+                            <WizardStep id="step2"
+                                title="parámetros de selección"
+                                validated="true">
+                                <MessageStrip id="mstrip2"
+                                    class="sapUiSmallMarginBottom"
+                                    text="Digite los parámetros"
+                                    showIcon="true"/>
+                                <Text class="sapUiSmallMarginBottom"
+                                    text="aaa"/>
+                            </WizardStep>
+                            <WizardStep id="step3"
+                                title="Selección de campos"
+                                validated="true">
+                                <MessageStrip id="mstrip3"
+                                    class="sapUiSmallMarginBottom"
+                                    text="Digite los datos básicos de la consulta"
+                                    showIcon="true"/>
+                                <Text class="sapUiSmallMarginBottom"
+                                    text="aaa"/>
+                            </WizardStep>
+                        </Wizard>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
