@@ -1,5 +1,6 @@
 <mvc:View controllerName="egb.cuentasui5.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
     displayBlock="true"
     xmlns="sap.m">
     <Shell id="shell">
@@ -13,13 +14,20 @@
                             complete="wizardCompletedHandler">
                             <WizardStep id="step1"
                                 title="Descripción de la consulta"
-                                validated="true">
+                                validated="false">
                                 <MessageStrip id="mstrip1"
                                     class="sapUiSmallMarginBottom"
                                     text="Digite los datos básicos de la consulta"
                                     showIcon="true"/>
-                                <Text class="sapUiSmallMarginBottom"
-                                    text="aaa"/>
+                                
+                                <f:SimpleForm id="sform1" editable="true">
+                                    <Label id="lab1" text="{i18n>employeeName}"/>
+				                    <Input id="inp1" value="{paramModel>/employeeName}" 
+                                    width="300px"
+                                    placeholder="{i18n>employeeNamePH}"
+                                    liveChange="onValidateStep1"/>
+                                </f:SimpleForm>
+
                             </WizardStep>
                             <WizardStep id="step2"
                                 title="parámetros de selección"
