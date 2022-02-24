@@ -1,4 +1,5 @@
-<mvc:View controllerName="egb.cuentasui5.controller.Main"
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="egb.cuentasui5.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.ui.layout.form"
     displayBlock="true"
@@ -19,15 +20,26 @@
                                     class="sapUiSmallMarginBottom"
                                     text="Digite los datos básicos de la consulta"
                                     showIcon="true"/>
-                                
-                                <f:SimpleForm id="sform1" editable="true">
-                                    <Label id="lab1" text="{i18n>employeeName}"/>
-				                    <Input id="inp1" value="{paramModel>/employeeName}" 
-                                    width="300px"
-                                    placeholder="{i18n>employeeNamePH}"
-                                    liveChange="onValidateStep1"/>
-                                </f:SimpleForm>
 
+                                <f:SimpleForm id="sform1"
+                                    editable="true">
+                                    <Label id="lab1"
+                                        text="{i18n>employeeName}"/>
+                                    <Input id="inp1"
+                                        value="{paramModel>/employeeName}"
+                                        width="300px"
+                                        placeholder="{i18n>employeeNamePH}"
+                                        liveChange="onValidateStep1"/>
+                                    <Label id='lab2'
+                                        text="{i18n>description}"/>
+                                    <TextArea id="txa1"
+                                        value="{paramModel>/description}"
+                                        valueLiveUpdate="true"
+                                        liveChange="onValidateStep1"
+                                        width="80%"
+                                        maxLength="150"
+                                        showExceededText="true"/>
+                                </f:SimpleForm>
                             </WizardStep>
                             <WizardStep id="step2"
                                 title="parámetros de selección"
@@ -36,8 +48,23 @@
                                     class="sapUiSmallMarginBottom"
                                     text="Digite los parámetros"
                                     showIcon="true"/>
-                                <Text class="sapUiSmallMarginBottom"
-                                    text="aaa"/>
+                                <f:SimpleForm id="sf2"
+                                    editable="true">
+                                    <Label id="lb3"
+                                        text="{i18n>charts}"/>
+                                    <Select id="sel1"
+                                        selectedKey="{chartsModel>/selectedChart}"
+                                        items="{chartsModel>/charts}"
+                                        forceSelection="true"
+                                        width="200px"
+                                        change="onValidateChart">
+                                        <items>
+                                            <core:Item id="it1"
+                                                key="{chartsModel>id}"
+                                                text="{chartsModel>name}"/>
+                                        </items>
+                                    </Select>
+                                </f:SimpleForm>
                             </WizardStep>
                             <WizardStep id="step3"
                                 title="Selección de campos"
@@ -46,7 +73,8 @@
                                     class="sapUiSmallMarginBottom"
                                     text="Digite los datos básicos de la consulta"
                                     showIcon="true"/>
-                                <Text class="sapUiSmallMarginBottom"
+                                <Text id="txt11"
+                                    class="sapUiSmallMarginBottom"
                                     text="aaa"/>
                             </WizardStep>
                         </Wizard>
